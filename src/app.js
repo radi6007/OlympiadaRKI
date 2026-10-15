@@ -14,7 +14,8 @@ const fill = (s, st) => s.replace(/\{code\}/g, st.code).replace(/\{age\}/g, st.a
 
 function header(t){
   return `<header class="top">
-    <a href="${organizationSites.ipr}" class="home-brand organization-link" target="_blank" rel="noopener noreferrer"><img class="brandlogo" src="/assets/72c87ae288b5.png" alt="IPR РКИ"></a>
+    <div class="header-brands"><a href="${organizationSites.chspu}" class="home-brand organization-link" target="_blank" rel="noopener noreferrer"><img class="university-logo" src="/assets/45b0305fd614.png" alt="ЧГПУ"></a>
+    <a href="${organizationSites.ipr}" class="home-brand organization-link" target="_blank" rel="noopener noreferrer"><img class="brandlogo" src="/assets/72c87ae288b5.png" alt="IPR РКИ"></a></div>
     <span class="header-title">${esc(t.ui.olympiad)}</span>
     <div class="spacer"></div>
     <div class="lsw">${D.LANGS.map(l=>`<button data-l="${l.id}" aria-pressed="${S.lang===l.id}" class="${S.lang===l.id?"on":""}">${l.label}</button>`).join("")}</div>
@@ -78,7 +79,7 @@ function landing(T){
         <ol class="parts">${L.format.parts.map((x,i)=>`<li><span>0${i+1}</span><b>${esc(x)}</b></li>`).join("")}</ol>
         <div class="fmt-note">${icon("headphones")}${esc(L.format.note)}</div>
       </div>
-      <div class="types"><h3>${esc(L.format.typesTitle)}</h3><ul>${L.format.types.map((x,i)=>`<li><i>${(S.lang==="ru"?["А)","Б)","В)","Г)"]:["A)","B)","C)","D)"])[i]}</i><span>${esc(x)}</span></li>`).join("")}</ul></div>
+      <div class="types"><h3>${esc(L.format.typesTitle)}</h3><ul>${L.format.types.map((x,i)=>`<li><span class="type-icon">${icon(["singleChoice","multipleChoice","matching","keyboard"][i])}</span><span>${esc(x)}</span></li>`).join("")}</ul></div>
     </div>
   </div></section>
 
@@ -115,7 +116,7 @@ function fmtBlock(T,tr,st){
   const F=T.landing.format, X=T.test;
   return `<p style="margin:0 0 14px">${esc(F.lead)}</p>
     <ol class="parts">${F.parts.map((x,i)=>`<li><span>0${i+1}</span><b>${esc(x)}</b></li>`).join("")}</ol>
-    <div class="types" style="margin-top:14px"><h3>${esc(F.typesTitle)}</h3><ul>${F.types.map((x,i)=>`<li><i>${(S.lang==="ru"?["А)","Б)","В)","Г)"]:["A)","B)","C)","D)"])[i]}</i><span>${esc(x)}</span></li>`).join("")}</ul></div>
+    <div class="types" style="margin-top:14px"><h3>${esc(F.typesTitle)}</h3><ul>${F.types.map((x,i)=>`<li><span class="type-icon">${icon(["singleChoice","multipleChoice","matching","keyboard"][i])}</span><span>${esc(x)}</span></li>`).join("")}</ul></div>
     <div class="total" style="margin-top:16px;font-size:18px">${esc(X.maxScore)}</div>`;
 }
 function testPage(st, T){

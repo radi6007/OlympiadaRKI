@@ -160,18 +160,25 @@ function modal(o){
   if(o.cancel) $("mNo").onclick = close;
   $("mYes").focus();
 }
-function rulesHtml(){ return "<ul style='margin:0;padding-left:20px'>" + t("rules").map(function(r){ return "<li style='margin:6px 0'>" + r + "</li>"; }).join("") + "</ul>"; }
+// Only existing technical translations are offered; task data stays Russian.
+var hintSerial = 0;
+function hintTranslation(ru, en){
+  if(TEST.noEn || !en || en === ru) return ru;
+  var id = "hint-en-" + (++hintSerial);
+  return ru + '<span class="hint-translation"><button type="button" class="hint-language" aria-expanded="false" aria-controls="' + id + '" aria-label="Show this hint in English" lang="en">' + icon("chat") + 'English<span aria-hidden="true" class="hint-chevron">⌄</span></button><span class="hint-english" id="' + id + '" lang="en" hidden>' + en + '</span></span>';
+}
+function technicalHint(key){ return hintTranslation(t(key), T.en && T.en[key]); }
+function ruleItems(){ return t("rules").map(function(r,i){ return "<li>" + hintTranslation(r, T.en && T.en.rules[i]) + "</li>"; }).join(""); }
+function rulesHtml(){ return "<ul style='margin:0;padding-left:20px'>" + ruleItems() + "</ul>"; }
 
 /* ===== I18N ===== */
 function applyLang(){
   document.documentElement.lang = lang;
   document.querySelectorAll('.privacy-link').forEach(function(a){ a.textContent = privacyLabels[lang]; });
   var nodes = document.querySelectorAll("[data-i18n]");
-  for(var i=0;i<nodes.length;i++){ var k = nodes[i].getAttribute("data-i18n"); if(typeof T[lang][k] === "string") nodes[i].innerHTML = T[lang][k]; }
-  $("langRu").setAttribute("aria-pressed", lang === "ru");
-  $("langEn").setAttribute("aria-pressed", lang === "en");
+  for(var i=0;i<nodes.length;i++){ var k = nodes[i].getAttribute("data-i18n"); if(typeof T[lang][k] === "string") nodes[i].innerHTML = ["formSub","doneB","errB"].includes(k) ? technicalHint(k) : T[lang][k]; }
   $("chipLvl").textContent = t("lvl"); $("heroLvl").textContent = t("lvl");
-  $("rulesList").innerHTML = t("rules").map(function(r){ return "<li>" + r + "</li>"; }).join("");
+  $("rulesList").innerHTML = ruleItems();
   $("errInfo").innerHTML = esc(t("errMore")) + "<b>" + esc(CONTACT_EMAIL) + "</b>." + (S && S.sendErr ? "<br><small style='opacity:.7'>" + esc(S.sendErr) + "</small>" : "");
   if(S && S.phase === "test") renderPart();
   if(S){ S.lang = lang; save(); }
@@ -188,7 +195,7 @@ function onStart(){
   $("fMail").classList.toggle("bad", !validMail(m1)); if(!validMail(m1)) ok = false;
   $("fAgree").classList.toggle("bad", !$("inAgree").checked); if(!$("inAgree").checked) ok = false;
   if(!ok){ toast(lang === "ru" ? "Проверьте поля формы" : "Please check the form"); return; }
-  modal({ title:t("mStartT"), body:esc(t("mStartB")), ok:t("mStartYes"), cancel:t("mCancel"), danger:true, onOk:function(){
+  modal({ title:t("mStartT"), body:technicalHint("mStartB"), ok:t("mStartYes"), cancel:t("mCancel"), danger:true, onOk:function(){
     S.sur = sur; S.name = nm; S.mail = m1; S.sid = uid();
     S.phase = "test"; S.startedAt = Date.now(); S.deadline = S.startedAt + TEST.limitSec * 1000; S.cur = 0; save();
     enterTest();
@@ -215,7 +222,7 @@ function startTimer(){
 }
 function timeUp(){
   stopAudio(true);
-  modal({ title:t("mTimeT"), body:esc(t("mTimeB")), ok:t("mOk") });
+  modal({ title:t("mTimeT"), body:technicalHint("mTimeB"), ok:t("mOk") });
   finishTest(true);
 }
 
@@ -384,14 +391,14 @@ function qHtml(n){
          q.o.map(function(o, i){ return '<option value="' + LETTERS[i] + '"' + (a === LETTERS[i] ? " selected" : "") + ">" + esc(o) + "</option>"; }).join("") +
          "</select>" + esc(q.parts[1]) + "</div>";
   } else if(q.type === "match"){
-    h += '<div class="mhint">' + esc(t("matchHint")) + '</div><div class="match" id="m' + n + '"><svg class="mlines"></svg><div class="mcol ml">' +
+    h += '<div class="mhint">' + technicalHint("matchHint") + '</div><div class="match" id="m' + n + '"><svg class="mlines"></svg><div class="mcol ml">' +
          q.left.map(function(x, i){ return '<button type="button" class="mitem" data-q="' + n + '" data-side="L" data-k="' + LETTERS[i] + '"><span class="mk">' + LETTERS[i] + '</span><span>' + esc(x) + '</span><i class="dot"></i></button>'; }).join("") +
          '</div><div class="mcol mr">' +
          q.right.map(function(x, i){ return '<button type="button" class="mitem" data-q="' + n + '" data-side="R" data-k="' + (i+1) + '"><span class="mk">' + (i+1) + '</span><span>' + esc(x) + '</span><i class="dot"></i></button>'; }).join("") +
          "</div></div>";
   } else {
     var multi = q.type === "two" || q.type === "multi";
-    if(q.type === "two") h += '<div class="twonote">' + esc(t("twoNote")) + "</div>";
+    if(q.type === "two") h += '<div class="twonote">' + technicalHint("twoNote") + "</div>";
     q.o.forEach(function(o, i){
       var L = LETTERS[i], checked = multi ? (Array.isArray(a) && a.indexOf(L) >= 0) : a === L;
       h += '<label class="opt' + (multi ? " sq" : "") + '"><input type="' + (multi ? "checkbox" : "radio") + '" name="q' + n + '" value="' + L + '"' + (checked ? " checked" : "") + '>' +
@@ -399,7 +406,7 @@ function qHtml(n){
     });
   }
   if(q.type === "gap" || q.type === "gap2"){
-    h += '<div class="kbdbox"><div class="kbdrow-top"><span class="kbdhint">' + esc(t("kbdHint")) + '</span><button class="iconbtn" type="button" id="kbtn' + n + '" aria-pressed="false" data-kq="' + n + '">' +
+    h += '<div class="kbdbox"><div class="kbdrow-top"><span class="kbdhint">' + technicalHint("kbdHint") + '</span><button class="iconbtn" type="button" id="kbtn' + n + '" aria-pressed="false" data-kq="' + n + '">' +
          icon("keyboard") +
          esc(t("kbdBtn")) + '</button></div><div id="kslot' + n + '"></div></div>';
   }
@@ -420,7 +427,7 @@ function renderPart(){
   $("kbdPark").appendChild($("kbd")); $("kbd").classList.add("hidden");
   h += '<div class="parthead"><h2>' + t("partWord") + " " + P.n + " · " + esc(P.title) + "</h2><p>" +
        esc(P.instr).replace(/\n/g, "<br>") + (TEST.hidePartPts ? "" : " · " + P.pts + " " + t("ptsWord")) + "</p></div>";
-  if(P.audio) h += '<div class="card player" id="player"><button class="playbtn" aria-label="play"></button><div class="pinfo"><div class="ptitle"></div><div class="pmeta"></div></div><div class="pstate wait"></div><div class="pbar"><div></div></div><div class="phint">' + t("playerHint") + "</div></div>";
+  if(P.audio) h += '<div class="card player" id="player"><button class="playbtn" aria-label="play"></button><div class="pinfo"><div class="ptitle"></div><div class="pmeta"></div></div><div class="pstate wait"></div><div class="pbar"><div></div></div><div class="phint">' + technicalHint("playerHint") + "</div></div>";
   P.groups.forEach(function(G){
     if(G.label) h += '<div class="group"><b>' + esc(G.label) + "</b>" + (G.note ? "<i>" + esc(G.note) + "</i>" : "") + "</div>";
     if(G.text) h += '<div class="card rtext"><h3>' + esc(G.text.title) + "</h3>" + G.text.paras.map(function(p){ return "<p>" + esc(p) + "</p>"; }).join("") + "</div>";
@@ -469,7 +476,7 @@ function enterTest(){
 function askFinish(){
   var un = unanswered();
   un.forEach(function(n){ var c = $("q" + n); if(c) c.classList.add("unanswered-hl"); });
-  modal({ title:t("mFinishT"), body:esc(t("mFinishB")), extra: un.length ? esc(t("mFinishUn")) + un.join(", ") : "",
+  modal({ title:t("mFinishT"), body:technicalHint("mFinishB"), extra: un.length ? esc(t("mFinishUn")) + un.join(", ") : "",
           ok:t("mFinishYes"), cancel:t("mCancel"), danger:true, onOk:function(){ finishTest(false); } });
 }
 
@@ -550,12 +557,25 @@ function download(){
 /* ===== INIT ===== */
 (function init(){
   mountIcons();
-  S = load(); lang = new URLSearchParams(location.search).get("lang") || S.lang || "ru"; if(!T[lang]) lang="ru"; history.replaceState(null,"",location.pathname);
-  if(TEST.noEn){ lang="ru"; document.querySelector(".lang").classList.add("hidden"); }
+  S = load();
+  const params = new URLSearchParams(location.search);
+  // Local review only: reopen a completed RKI-2 without touching other attempts.
+  if(import.meta.env.DEV && TEST.id === "RKI-2-V1" && params.get("restart") === "1" && S.phase === "done"){
+    const previousLang = S.lang;
+    localStorage.removeItem(SKEY);
+    S = fresh(); S.lang = previousLang || "ru"; save();
+  }
+  lang = "ru"; history.replaceState(null,"",location.pathname);
   if(DEMO) $("demoBar").classList.remove("hidden");
   buildKbd();
-  $("langRu").onclick = function(){ lang = "ru"; applyLang(); };
-  $("langEn").onclick = function(){ lang = "en"; applyLang(); };
+  document.addEventListener("click", function(e){
+    var button = e.target.closest(".hint-language");
+    if(!button) return;
+    var translation = $(button.getAttribute("aria-controls"));
+    var open = button.getAttribute("aria-expanded") !== "true";
+    button.setAttribute("aria-expanded", String(open)); translation.hidden = !open;
+    paintMatches();
+  });
   $("btnStart").onclick = onStart;
   $("btnPrev").onclick = function(){ goTo(S.cur - 1); };
   $("btnNext").onclick = function(){ goTo(S.cur + 1); };

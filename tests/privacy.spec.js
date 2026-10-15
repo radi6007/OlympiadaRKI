@@ -53,5 +53,5 @@ test('footer links on all pages and pre-form link open the document without losi
   await popup.close();
   await expect(page.locator('#inSur')).toHaveValue('Demo draft');
   await page.reload();await expect(page.locator('#inSur')).toHaveValue('Demo draft');
-  await page.locator('#langEn').click();await expect(link).toHaveText('Olympiad participant data processing (RU)');
+  await expect(page.locator('#langEn')).toHaveCount(0);await expect(link).toHaveText('Обработка данных участников олимпиады');
 });

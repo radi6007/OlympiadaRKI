@@ -1,6 +1,9 @@
 /* Solid UI symbols matching the filled style in the supplied RKI reference.
    Paths are code-native assets; shared by information pages and the test. */
 const paths = {
+  singleChoice: 'M6 2a5 5 0 1 0 0 10A5 5 0 0 0 6 2Zm0 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm8 1h9v2h-9V6ZM6 14a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm8 2h9v2h-9v-2Z',
+  multipleChoice: 'M1 2h10v9H1V2Zm2 4 3 3 4-5-1.5-1L6 6.5 4.5 5 3 6Zm11 0h9v2h-9V6ZM1 14h10v9H1v-9Zm2 4 3 3 4-5-1.5-1L6 18.5 4.5 17 3 18Zm11 0h9v2h-9v-2Z',
+  matching: 'm16 2 7 6-7 6v-4H2V6h14V2ZM8 10v4h14v4H8v4l-7-6 7-6Z',
   medal: 'M5 2h5l2 5 2-5h5l-4 7a7 7 0 1 1-6 0L5 2Zm7 9-1.2 2.5-2.8.4 2 2-.5 2.8 2.5-1.3 2.5 1.3-.5-2.8 2-2-2.8-.4L12 11Z',
   cert: 'M4 3a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h9v-3H5V6h14v6h3V5a2 2 0 0 0-2-2H4Zm3 5v2h10V8H7Zm0 4v2h6v-2H7Zm11 1a4 4 0 0 0-3 6.6V23l3-1.5 3 1.5v-3.4A4 4 0 0 0 18 13Z',
   mail: 'M3 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H3Zm0 3V6l9 6 9-6v1l-9 6-9-6Z',

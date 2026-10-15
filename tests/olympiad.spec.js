@@ -63,7 +63,7 @@ test('full test, audio resume, timer, answers, keyboard, completion, no external
  await page.locator('#btnFinish').click();await page.locator('#mYes').click();
  await expect(page.locator('#stDone')).toBeVisible();await expect(page.locator('#stDone')).toContainText('ответы никуда не отправлены');await expect(page.locator('#scoreBox')).toBeHidden();
  expect((await state(page)).phase).toBe('done');await page.reload();await expect(page.locator('#stDone')).toBeVisible();
- await page.locator('#langEn').click();await expect(page.locator('#stDone')).toContainText('answers have not been sent');
+ await page.locator('#stDone .hint-language').click();await expect(page.locator('#stDone .hint-english')).toContainText('answers have not been sent');
  expect(external).toEqual([]);expect(errors).toEqual([]);
 });
 test('validation, form draft and expired deadline auto-finish after refresh',async({page})=>{
@@ -102,10 +102,10 @@ test('unanswered completion, EN entry and key information is readable',async({pa
   expect(await page.locator(sel).evaluate(el=>getComputedStyle(el).color)).not.toBe('rgb(255, 255, 255)');
  }
  await page.getByRole('button',{name:'EN',exact:true}).click();await page.locator('#agree').check();await page.locator('#startBtn').click();
- await expect(page.locator('#langEn')).toHaveAttribute('aria-pressed','true');
+ await expect(page.locator('#langEn')).toHaveCount(0);await expect(page.locator('html')).toHaveAttribute('lang','ru');
  await page.locator('#inSur').fill('Demo');await page.locator('#inName').fill('Test');await page.locator('#inMail').fill('demo@example.test');await page.locator('#inAgree').check();await page.locator('#btnStart').click();await page.locator('#mYes').click();
- await page.locator('[data-tab="2"]').click();await page.locator('#btnFinish').click();await expect(page.locator('#modalHost')).toContainText('Tasks left unanswered:');await page.locator('#mYes').click();
- await expect(page.locator('#stDone')).toContainText('No result is saved on a server');
+ await page.locator('[data-tab="2"]').click();await page.locator('#btnFinish').click();await expect(page.locator('#modalHost')).toContainText('Без ответа осталось заданий:');await page.locator('#mYes').click();
+ await page.locator('#stDone .hint-language').click();await expect(page.locator('#stDone .hint-english')).toContainText('No result is saved on a server');
 });
 test('audio error can be retried without consuming a play',async({page})=>{
  await page.route('**/assets/rki-1.mp3',route=>route.abort());await start(page);

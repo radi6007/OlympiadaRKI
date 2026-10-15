@@ -19,8 +19,8 @@ for(const [slug,source] of Object.entries(manifest)){
   page.on('request',r=>{if(!r.url().startsWith('http://127.0.0.1:5174'))external.push(r.url())});
   await page.addInitScript(()=>{const Native=window.Audio;window.Audio=function(...args){window.qaAudio=new Native(...args);return window.qaAudio}});
   await page.goto(`/${slug}/test/?lang=en`);
-  await expect(page.locator('html')).toHaveAttribute('lang',TEST.noEn?'ru':'en');
-  if(TEST.noEn)await expect(page.locator('.lang')).toBeHidden();else await page.locator('#langRu').click();
+  await expect(page.locator('html')).toHaveAttribute('lang','ru');
+  await expect(page.locator('.lang')).toHaveCount(0);
   await expect(page.locator('#heroLvl')).toContainText(TEST.code);
   await page.locator('#inSur').fill('Демо');await page.locator('#inName').fill(slug);await page.locator('#inMail').fill('demo@example.test');
   await page.reload();await expect(page.locator('#inName')).toHaveValue(slug);
