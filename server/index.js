@@ -1,0 +1,11 @@
+import { config } from './config.js';
+import { loadScoring } from './scoring.js';
+import { createPool } from './db.js';
+import { createApi } from './api.js';
+import { startWorker } from './sync.js';
+const cfg=config(), scoring=loadScoring(cfg.source), pool=createPool(cfg);
+await pool.query('SELECT 1');
+const worker=startWorker(pool,cfg), server=createApi(pool,scoring,worker);
+server.requestTimeout=15000;server.headersTimeout=10000;
+server.listen(cfg.port,cfg.host,()=>console.log(`Olympiad API: http://${cfg.host}:${cfg.port}`));
+for(const signal of ['SIGTERM','SIGINT'])process.on(signal,()=>{worker.stop();server.close(async()=>{await pool.end();process.exit(0)})});

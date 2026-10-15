@@ -1,0 +1,27 @@
+{
+  "rki-2": {
+    "source": "Олимпиада_РКИ-2_тест.html",
+    "dataSha256": "7fdb1802bef5a3b3e342f6a2728c4539fe1b0cd733d8858d32e390c288dec6c2",
+    "audioSha256": "3c6996fa1fa49bd6f21c5c915d1f1c996f72f278352ff7d2829fc6f87dce9707"
+  },
+  "rki-3": {
+    "source": "Олимпиада_РКИ-3_тест.html",
+    "dataSha256": "d3fa20a08c871e747e9c748914d787c179e38420dffcb973ee2dffa28aa4ebb3",
+    "audioSha256": "7a4ae770e818ec9da8472804196f6ee0cb78ff5e0ca6f65b5f40a297723d584b"
+  },
+  "rku-1": {
+    "source": "Олимпиада_РКУ-1_тест.html",
+    "dataSha256": "444953fe37e35a0b0e16a10aded92892bbe17c50d82d14c184352e0727c820d1",
+    "audioSha256": "619f46a8ccb31490baf7a7917ad88d8733ccc06d6b015ed9d1ac22284d867ca1"
+  },
+  "rku-2": {
+    "source": "Олимпиада_РКУ-2_тест.html",
+    "dataSha256": "db08acde49b016094286e4c9b2d854b7c63273c642e55ace74b9a3e854282211",
+    "audioSha256": "3c6996fa1fa49bd6f21c5c915d1f1c996f72f278352ff7d2829fc6f87dce9707"
+  },
+  "rku-3": {
+    "source": "Олимпиада_РКУ-3_тест.html",
+    "dataSha256": "aec80dfdfa7c0ee5f4ef09355ba0a7985243f9d2336be1de127db62dbc553de8",
+    "audioSha256": "7a4ae770e818ec9da8472804196f6ee0cb78ff5e0ca6f65b5f40a297723d584b"
+  }
+}

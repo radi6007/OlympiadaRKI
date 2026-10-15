@@ -1,0 +1,603 @@
+{
+  "REG_URL": "https://docs.google.com/forms/d/e/1FAIpQLSdMRSIZ4N1Kr61FnNSQhdmu2IG4AECOoAZC8qHZCM_gz6uwPg/viewform",
+  "SITE_URL": "https://chspu.ru/2026/09/17/108709/",
+  "EMAIL": "kafedraru2019@inbox.ru",
+  "PHONE": "+7 928 887-23-86",
+  "LANGS": [
+    {
+      "id": "ru",
+      "label": "RU",
+      "name": "Русский",
+      "dir": "ltr"
+    },
+    {
+      "id": "en",
+      "label": "EN",
+      "name": "English",
+      "dir": "ltr"
+    }
+  ],
+  "STREAMS": [
+    {
+      "code": "РКУ-1",
+      "slug": "rku-1",
+      "track": "rku",
+      "age": "10–12",
+      "level": {
+        "ru": "ориентир: 5–6 классы",
+        "en": "benchmark: grades 5–6",
+        "fr": "repère : classes 5–6",
+        "ar": "المستوى المرجعي: الصفان 5–6"
+      },
+      "testPath": "/rku-1/test/"
+    },
+    {
+      "code": "РКУ-2",
+      "slug": "rku-2",
+      "track": "rku",
+      "age": "13–15",
+      "level": {
+        "ru": "ориентир: 7–9 классы",
+        "en": "benchmark: grades 7–9",
+        "fr": "repère : classes 7–9",
+        "ar": "المستوى المرجعي: الصفوف 7–9"
+      },
+      "testPath": "/rku-2/test/"
+    },
+    {
+      "code": "РКУ-3",
+      "slug": "rku-3",
+      "track": "rku",
+      "age": "16–18",
+      "level": {
+        "ru": "ориентир: 10–11 классы",
+        "en": "benchmark: grades 10–11",
+        "fr": "repère : classes 10–11",
+        "ar": "المستوى المرجعي: الصفان 10–11"
+      },
+      "testPath": "/rku-3/test/"
+    },
+    {
+      "code": "РКИ-1",
+      "slug": "rki-1",
+      "track": "rki",
+      "level": {
+        "ru": "уровень А1+/А2",
+        "en": "level A1+/A2",
+        "fr": "niveau A1+/A2",
+        "ar": "المستوى A1+/A2"
+      },
+      "testPath": "/rki-1/test/"
+    },
+    {
+      "code": "РКИ-2",
+      "slug": "rki-2",
+      "track": "rki",
+      "level": {
+        "ru": "уровень А2/В1",
+        "en": "level A2/B1",
+        "fr": "niveau A2/B1",
+        "ar": "المستوى A2/B1"
+      },
+      "testPath": "/rki-2/test/"
+    },
+    {
+      "code": "РКИ-3",
+      "slug": "rki-3",
+      "track": "rki",
+      "level": {
+        "ru": "уровень В1+/В2",
+        "en": "level B1+/B2",
+        "fr": "niveau B1+/B2",
+        "ar": "المستوى B1+/B2"
+      },
+      "testPath": "/rki-3/test/"
+    }
+  ],
+  "T": {
+    "ru": {
+      "ui": {
+        "olympiad": "Международная олимпиада по русскому языку",
+        "title": "Русский язык: код единства",
+        "region": "для школьников стран Ближнего Востока, Персидского залива и Африки",
+        "orgs": "ЧГПУ · КСОРС ОАЭ · Платформа РКИ IPR",
+        "tracks": {
+          "rku": "Русский как унаследованный",
+          "rki": "Русский как иностранный"
+        },
+        "years": "лет",
+        "ageWord": "Возраст"
+      },
+      "landing": {
+        "kicker": "Международная олимпиада по русскому языку · 2026",
+        "lead": "Для учащихся 10–18 лет из образовательных организаций стран Ближнего Востока, Персидского залива и Африки. Для тех, кто изучает русский как иностранный, и тех, для кого русский — язык семьи.",
+        "year": "Олимпиада приурочена к Году единства народов России",
+        "chips": [
+          "Бесплатно",
+          "2 тура",
+          "6 групп",
+          "Дипломы и призы"
+        ],
+        "ctaReg": "Зарегистрироваться",
+        "ctaRegNote": "до 30 октября 2026 года",
+        "ctaDoc": "Положение об олимпиаде",
+        "datesTitle": "Главные даты",
+        "dates": [
+          [
+            "15.09 – 30.10",
+            "Регистрация",
+            "анкета в Google Forms"
+          ],
+          [
+            "20.10 – 30.10",
+            "1-й тур",
+            "онлайн, 90 минут"
+          ],
+          [
+            "31.10",
+            "Результаты первого тура",
+            ""
+          ],
+          [
+            "4.11 – 9.11",
+            "2-й тур (финал)",
+            "очно или онлайн с прокторингом, 120 минут"
+          ],
+          [
+            "до 10.11",
+            "Результаты второго тура и список победителей",
+            ""
+          ],
+          [
+            "до 15.11",
+            "Награждение",
+            "дипломы, призы, сертификаты"
+          ]
+        ],
+        "tracksTitle": "Выберите своё направление",
+        "rku": {
+          "name": "РКУ — русский как унаследованный",
+          "text": "Русский — язык вашей семьи, или вы освоили его в раннем детстве и продолжаете изучать в школе."
+        },
+        "rki": {
+          "name": "РКИ — русский как иностранный",
+          "text": "В семье вы не говорите по-русски, а изучаете его как иностранный не меньше одного учебного года (от уровня А1+)."
+        },
+        "hint": "Возраст учитывается только для направлений РКУ, на дату начала первого тура. Один участник может получить доступ к заданиям только одной группы.",
+        "stepsTitle": "Что нужно сделать?",
+        "steps": [
+          [
+            "Зарегистрируйтесь",
+            "Заполните анкету до 30 октября. За участника младше 18 лет заявку подтверждает родитель или законный представитель."
+          ],
+          [
+            "Получите ссылку",
+            "В день старта организаторы пришлют ссылку на тест вашего потока на ваш электронный адрес, указанный при регистрации."
+          ],
+          [
+            "Пройдите тест",
+            "90 минут, онлайн, одна попытка. Перед началом прочитайте правила на странице своего потока."
+          ],
+          [
+            "Выйдите в финал",
+            "В финал проходят лучшие участники каждого потока с результатом не менее 70 баллов из 100."
+          ]
+        ],
+        "awardsTitle": "Что получат участники",
+        "awards": [
+          [
+            "Дипломы",
+            "и ценные призы победителям и призёрам каждого потока"
+          ],
+          [
+            "Электронный сертификат",
+            "каждому, кто завершил первый тур без нарушения правил"
+          ],
+          [
+            "Благодарственные письма",
+            "педагогам, подготовившим победителей и призёров"
+          ]
+        ],
+        "faqTitle": "Коротко о главном",
+        "faq": [
+          [
+            "Сколько стоит участие?",
+            "Участие бесплатное."
+          ],
+          [
+            "На каком языке задания?",
+            "На русском. В потоках РКИ инструкции простые, по уровню участника."
+          ],
+          [
+            "Что нужно для онлайн-тура?",
+            "Компьютер или ноутбук, стабильный интернет, наушники и 90 свободных минут подряд."
+          ],
+          [
+            "Нужны особые условия?",
+            "Напишите в оргкомитет не позднее чем за 7 дней до тура."
+          ]
+        ],
+        "orgTitle": "Организаторы",
+        "supportTitle": "При поддержке",
+        "partnerTitle": "Цифровой партнёр",
+        "orgs": [
+          "Чеченский государственный педагогический университет",
+          "Координационный совет организаций российских соотечественников в ОАЭ"
+        ],
+        "support": [
+          "Министерство просвещения РФ",
+          "Посольство РФ в ОАЭ",
+          "Генеральное консульство РФ в Дубае и Северных Эмиратах",
+          "Международная ассоциация преподавателей русского языка и литературы (МАПРЯЛ)"
+        ],
+        "partner": "Платформа РКИ IPR",
+        "contactsTitle": "Контакты оргкомитета",
+        "contactName": "Карина Гайрбекова, секретарь оргкомитета",
+        "motto": "Открывайте язык — открывайте мир!",
+        "streamsTitle": "Страницы тестов по потокам",
+        "streamsNote": "откроются 20 октября",
+        "format": {
+          "title": "Как устроен тест",
+          "lead": "Олимпиада проходит в формате онлайн-теста. Тест состоит из трёх частей:",
+          "part": "Часть",
+          "parts": [
+            "Аудирование",
+            "Лексика и грамматика",
+            "Чтение"
+          ],
+          "typesTitle": "Типы заданий",
+          "types": [
+            "Выбрать один правильный ответ",
+            "Выбрать несколько правильных ответов",
+            "Соотнести элементы",
+            "Открытые задания: вписать слово или словосочетание"
+          ],
+          "note": "Для аудирования понадобятся наушники или колонки."
+        },
+        "leadParas": [
+          "Любите русский язык, интересуетесь литературой и культурой России?",
+          "Хотите проверить свои знания, проявить языковое чутьё и посоревноваться со сверстниками из разных стран? Тогда Олимпиада «Русский язык: код единства» — для вас!",
+          "К участию приглашаются школьники 10–18 лет из стран Ближнего Востока, Персидского залива и Африки. Олимпиада объединит и тех, кто изучает русский как иностранный, и тех, для кого русский — язык семьи."
+        ]
+      },
+      "test": {
+        "eyebrow": "Отборочный тур · 20–30 октября 2026",
+        "titlePre": "Тест потока",
+        "facts": [
+          [
+            "90",
+            "минут"
+          ],
+          [
+            "1",
+            "попытка"
+          ],
+          [
+            "100",
+            "баллов"
+          ],
+          [
+            "онлайн",
+            "из дома или школы"
+          ]
+        ],
+        "whoTitle": "Для кого этот тест",
+        "whoRku": "Вы регулярно общаетесь по-русски в семье или освоили язык в раннем детстве и продолжаете изучать его за рубежом.",
+        "whoRki": "Для участников, которые изучают русский как иностранный не меньше одного учебного года и не используют его как основной язык общения в семье.",
+        "whoAge": "Этот тест — только для возрастной группы {age} лет. Возраст считается на дату начала первого тура.",
+        "wrong": "Это не ваш поток? Не начинайте тест — у вас одна попытка. Найдите свою страницу:",
+        "whyTitle": "Зачем проходить",
+        "why": [
+          "Это отборочный тур: в финал выходят лучшие участники потока {code}.",
+          "Без участия в первом туре попасть в финал невозможно.",
+          "Все, кто завершит тур без нарушений, получат электронный сертификат участника.",
+          "Результаты первого тура — не позднее 31 октября."
+        ],
+        "whatTitle": "Что в тесте",
+        "whatTotal": "Всего — 100 баллов",
+        "howTitle": "Как проходит тест",
+        "how": [
+          [
+            "Подготовьтесь",
+            "Компьютер или ноутбук, стабильный интернет, тихое место и 90 свободных минут подряд."
+          ],
+          [
+            "Откройте тест",
+            "С 20 по 30 октября — по ссылке от организаторов."
+          ],
+          [
+            "Введите свои данные",
+            "Точно так же, как в регистрационной анкете (см. ниже)."
+          ],
+          [
+            "Выполните задания",
+            "На всю работу — 90 минут. Распределяйте время, следите за таймером."
+          ],
+          [
+            "Отправьте работу",
+            "Проверьте ответы и завершите тест до окончания времени."
+          ]
+        ],
+        "onceTitle": "Только одна попытка",
+        "once": "Тест можно пройти один раз. Начать заново или пересдать нельзя. Открывайте тест, только когда готовы выполнить его целиком.",
+        "dataTitle": "Важно: укажите корректные данные",
+        "dataLead": "По этим данным организаторы найдут вас в списке участников, засчитают результат и оформят сертификат. Данные должны совпадать с регистрационной анкетой.",
+        "data": [
+          "Фамилия и имя — как в документе и в анкете регистрации",
+          "Электронная почта — та же, что при регистрации"
+        ],
+        "rulesTitle": "Правила честного участия",
+        "rulesLead": "Выполняйте задания самостоятельно. Во время теста нельзя:",
+        "rules": [
+          "пользоваться помощью других людей и переписываться",
+          "использовать поисковики, переводчики, электронные словари и искусственный интеллект",
+          "пользоваться готовыми ответами и чужими текстами",
+          "копировать, фотографировать и пересылать задания"
+        ],
+        "rulesNote": "Нарушение может стать причиной аннулирования результата.",
+        "techTitle": "Если что-то пошло не так",
+        "tech": "При техническом сбое сразу напишите в оргкомитет — не позднее 24 часов после попытки. Укажите ФИО, поток {code}, время сбоя и приложите скриншот. Оргкомитет проверит данные платформы и сообщит вам, что делать дальше.",
+        "ctaCheck": "Я прочитал(а) правила и укажу в тесте корректные данные",
+        "cta": "Начать тест",
+        "ctaNote": "Кнопка активна с 20 по 30 октября",
+        "footerQ": "Вопросы об олимпиаде",
+        "keyboard": "Если у вас нет русской клавиатуры для выполнения заданий открытого типа, вы можете воспользоваться выпадающей клавиатурой, встроенной в тест.",
+        "maxScore": "Максимальный балл — 100",
+        "langNote": "Все задания на русском языке. Инструкции сформулированы просто, в соответствии с вашим уровнем.",
+        "importantTitle": "Важно перед началом"
+      }
+    },
+    "en": {
+      "ui": {
+        "olympiad": "International Russian Language Olympiad",
+        "title": "Russian: the Code of Unity",
+        "region": "for school students in the Middle East, the Persian Gulf and Africa",
+        "orgs": "ChSPU · Coordinating Council of Russian Compatriots in the UAE · IPR RFL Platform",
+        "tracks": {
+          "rku": "Russian as a heritage language",
+          "rki": "Russian as a foreign language"
+        },
+        "years": "years",
+        "ageWord": "Age"
+      },
+      "landing": {
+        "kicker": "International Russian Language Olympiad · 2026",
+        "lead": "For students aged 10–18 at schools and other educational organisations in the Middle East, the Persian Gulf and Africa. For those learning Russian as a foreign language, and for those whose family language is Russian.",
+        "year": "Held in honour of the Year of Unity of the Peoples of Russia",
+        "chips": [
+          "Free",
+          "2 rounds",
+          "6 groups",
+          "Diplomas and prizes"
+        ],
+        "ctaReg": "Register",
+        "ctaRegNote": "by 30 October 2026",
+        "ctaDoc": "Olympiad regulations (RU)",
+        "datesTitle": "Key dates",
+        "dates": [
+          [
+            "15.09 – 30.10",
+            "Registration",
+            "Google Forms questionnaire"
+          ],
+          [
+            "20.10 – 30.10",
+            "Round 1",
+            "online, 90 minutes"
+          ],
+          [
+            "31.10",
+            "First-round results",
+            ""
+          ],
+          [
+            "4.11 – 9.11",
+            "Round 2 (final)",
+            "in person or online with proctoring, 120 minutes"
+          ],
+          [
+            "by 10.11",
+            "Second-round results and list of winners",
+            ""
+          ],
+          [
+            "by 15.11",
+            "Awards",
+            "diplomas, prizes, certificates"
+          ]
+        ],
+        "tracksTitle": "Choose your track",
+        "rku": {
+          "name": "РКУ — Russian as a heritage language",
+          "text": "Russian is your family language, or you learned it in early childhood and keep studying it at school."
+        },
+        "rki": {
+          "name": "РКИ — Russian as a foreign language",
+          "text": "You don't speak Russian at home and have studied it as a foreign language for at least one school year (A1+ or above)."
+        },
+        "hint": "Age groups apply only to heritage-language streams, as of the first round. Each participant can access one group only.",
+        "stepsTitle": "What do you need to do?",
+        "steps": [
+          [
+            "Register",
+            "Fill in the form by 30 October. For participants under 18, a parent or legal guardian confirms the application."
+          ],
+          [
+            "Get your link",
+            "On the start day, the organisers will send the link to your stream's test to the email address you gave when registering."
+          ],
+          [
+            "Take the test",
+            "90 minutes online, one attempt. Read the rules on your stream's page before you start."
+          ],
+          [
+            "Reach the final",
+            "The best participants in each stream who score at least 70 points out of 100 go through to the final."
+          ]
+        ],
+        "awardsTitle": "What participants receive",
+        "awards": [
+          [
+            "Diplomas",
+            "and prizes for winners and runners-up in every stream"
+          ],
+          [
+            "An e-certificate",
+            "for everyone who completes the first round without breaking the rules"
+          ],
+          [
+            "Letters of thanks",
+            "for teachers of winners and runners-up"
+          ]
+        ],
+        "faqTitle": "Quick answers",
+        "faq": [
+          [
+            "How much does it cost?",
+            "Participation is free."
+          ],
+          [
+            "What language are the tasks in?",
+            "Russian. In the РКИ streams, instructions are simple and match the participant's level."
+          ],
+          [
+            "What do I need for the online round?",
+            "A computer or laptop, a stable internet connection, headphones and 90 free minutes in a row."
+          ],
+          [
+            "Need special arrangements?",
+            "Write to the organising committee at least 7 days before the round."
+          ]
+        ],
+        "orgTitle": "Organisers",
+        "supportTitle": "Supported by",
+        "partnerTitle": "Digital partner",
+        "orgs": [
+          "Chechen State Pedagogical University",
+          "Coordinating Council of Russian Compatriot Organisations in the UAE"
+        ],
+        "support": [
+          "Ministry of Education of the Russian Federation",
+          "Embassy of the Russian Federation in the UAE",
+          "Consulate General of Russia in Dubai and the Northern Emirates",
+          "International Association of Teachers of Russian Language and Literature (MAPRYAL)"
+        ],
+        "partner": "IPR RFL Platform",
+        "contactsTitle": "Organising committee",
+        "contactName": "Karina Gairbekova, Secretary of the Organising Committee",
+        "motto": "Discover the language — discover the world!",
+        "streamsTitle": "Test pages by stream",
+        "streamsNote": "open on 20 October",
+        "format": {
+          "title": "How the test works",
+          "lead": "The Olympiad is an online test in three parts:",
+          "part": "Part",
+          "parts": [
+            "Listening",
+            "Vocabulary and grammar",
+            "Reading"
+          ],
+          "typesTitle": "Task types",
+          "types": [
+            "Choose one correct answer",
+            "Choose several correct answers",
+            "Match the items",
+            "Open tasks: type in a word or phrase"
+          ],
+          "note": "For the listening part you will need headphones or speakers."
+        },
+        "leadParas": [
+          "Do you love the Russian language and take an interest in the literature and culture of Russia?",
+          "Want to test your knowledge, show your feel for language and compete with peers from different countries? Then the Olympiad “Russian: the Code of Unity” is for you!",
+          "School students aged 10–18 from the Middle East, the Persian Gulf and Africa are invited to take part. The Olympiad brings together both those learning Russian as a foreign language and those whose family language is Russian."
+        ]
+      },
+      "test": {
+        "eyebrow": "Qualifying round · 20–30 October 2026",
+        "titlePre": "Test for stream",
+        "facts": [
+          [
+            "90",
+            "minutes"
+          ],
+          [
+            "1",
+            "attempt"
+          ],
+          [
+            "100",
+            "points"
+          ],
+          [
+            "online",
+            "from home or school"
+          ]
+        ],
+        "whoTitle": "Who this test is for",
+        "whoRku": "You regularly speak Russian with your family, or you learned it in early childhood and continue to study it abroad.",
+        "whoRki": "For participants who have studied Russian as a foreign language for at least one school year and do not use it as their main language at home.",
+        "whoAge": "This test is only for the {age} age group. Your age is counted on the start date of the first round.",
+        "wrong": "Not your stream? Do not start the test — you only have one attempt. Find your page:",
+        "whyTitle": "Why take it",
+        "why": [
+          "This is the qualifying round: the best participants in stream {code} go to the final.",
+          "You cannot reach the final without taking part in the first round.",
+          "Everyone who completes the round without breaking the rules receives an e-certificate.",
+          "First-round results will be published by 31 October."
+        ],
+        "whatTitle": "What's in the test",
+        "whatTotal": "Total — 100 points",
+        "howTitle": "How the test works",
+        "how": [
+          [
+            "Get ready",
+            "A computer or laptop, a stable internet connection, a quiet place and 90 free minutes in a row."
+          ],
+          [
+            "Open the test",
+            "Between 20 and 30 October, using the organisers' link."
+          ],
+          [
+            "Enter your details",
+            "Exactly as in your registration form (see below)."
+          ],
+          [
+            "Do the tasks",
+            "You have 90 minutes for the whole test. Pace yourself and watch the timer."
+          ],
+          [
+            "Submit",
+            "Check your answers and finish the test before time runs out."
+          ]
+        ],
+        "onceTitle": "One attempt only",
+        "once": "You can take the test only once. You cannot restart or retake it. Open the test only when you are ready to complete it in one go.",
+        "dataTitle": "Important: enter correct details",
+        "dataLead": "The organisers use these details to find you on the participant list, count your result and issue your certificate. They must match your registration form.",
+        "data": [
+          "Surname and first name — as in your ID and your registration form",
+          "Email — the same one you used to register"
+        ],
+        "rulesTitle": "Fair play rules",
+        "rulesLead": "Work on your own. During the test you must not:",
+        "rules": [
+          "get help from other people or exchange messages",
+          "use search engines, translators, electronic dictionaries or artificial intelligence",
+          "use ready-made answers or other people's texts",
+          "copy, photograph or share the tasks"
+        ],
+        "rulesNote": "Breaking the rules may lead to your result being cancelled.",
+        "techTitle": "If something goes wrong",
+        "tech": "If you have a technical problem, write to the organising committee straight away — within 24 hours of your attempt. Include your full name, stream {code}, the time of the problem and a screenshot. The committee will check the platform data and let you know what to do next.",
+        "ctaCheck": "I have read the rules and will enter correct details in the test",
+        "cta": "Start the test",
+        "ctaNote": "The button is active from 20 to 30 October",
+        "footerQ": "Questions about the Olympiad",
+        "keyboard": "If you don't have a Russian keyboard for the open tasks, you can use the pop-up keyboard built into the test.",
+        "maxScore": "Maximum score — 100",
+        "langNote": "All tasks are in Russian. Instructions are written in simple language that matches your level.",
+        "importantTitle": "Before you start"
+      }
+    }
+  }
+}

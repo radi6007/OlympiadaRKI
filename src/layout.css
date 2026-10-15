@@ -1,0 +1,20 @@
+/* Base layout. Product components live in product.css; no mockup overrides. */
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font:400 16px/1.5 var(--rki-font);color:var(--rki-text);background:var(--rki-canvas);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button,input{font:inherit}
+button,a,input{touch-action:manipulation}
+button{cursor:pointer}
+button:disabled{cursor:not-allowed}
+h1,h2,h3{margin:0;font-weight:500;line-height:1.2;letter-spacing:-.02em;overflow-wrap:break-word}
+h2{font-size:28px;margin-bottom:24px}h3{font-size:20px}
+p{margin:0 0 16px}
+.wrap,.top,.breadcrumb,.hero,.thero{width:min(var(--rki-content),calc(100% - 2 * var(--rki-gutter)));margin-inline:auto}
+section{padding:48px 0}
+.spacer{flex:1}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}
+.small{font-size:14px;color:var(--rki-muted)}
+:focus-visible{outline:3px solid var(--rki-navy);outline-offset:4px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr;gap:32px}section{padding:32px 0}h2{font-size:24px;margin-bottom:20px}h3{font-size:19px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

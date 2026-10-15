@@ -1,0 +1,119 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self' blob:; font-src 'self'; connect-src 'self' ws://localhost:* ws://127.0.0.1:*; object-src 'none'; base-uri 'self'; form-action 'none'"><meta name="theme-color" content="#B41E23"><title>РКУ-2 · Русский язык: код единства</title></head><body>
+<header>
+  <div class="demo hidden" id="demoBar"><span data-i18n="demoNotice"></span></div>
+  <div class="wrap">
+    <div class="hbar">
+      <div class="logos">
+        <a class="organization-link organization-logo" href="https://www.ros-edu.ru/" target="_blank" rel="noopener noreferrer"><img class="logo" src="/assets/de9a5297f099.png" alt="IPR РКИ"></a>
+        <span class="lsep"></span>
+        <a class="organization-link organization-logo" href="https://chspu.ru/" target="_blank" rel="noopener noreferrer"><img class="logo ch" src="/assets/45b0305fd614.png" alt="ЧГПУ"></a>
+      </div>
+      <div class="chips">
+        <span class="chip chip-lvl" id="chipLvl"></span>
+      </div>
+      <div class="hright">
+        <div class="timer hidden" id="timer">
+          <span data-icon="time"></span>
+          <span id="timerTxt">90:00</span>
+        </div>
+        <button class="iconbtn hidden" id="btnRules" type="button">
+          <span data-icon="info"></span>
+          <span class="t" data-i18n="btnRules"></span>
+        </button>
+        <div class="lang"><button id="langRu" aria-pressed="true">RU</button><button id="langEn" aria-pressed="false">EN</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="rule"><div class="rule-fill" id="ruleFill"></div></div>
+</header>
+
+<!-- START -->
+<main id="start" class="hidden">
+  <div class="wrap">
+    <div class="card hero">
+      <div class="hero-eyebrow" data-i18n="heroEyebrow"></div>
+      <h1 data-i18n="heroTitle"></h1>
+      <div class="hero-lvl"><span id="heroLvl"></span></div>
+      <div class="facts">
+        <div class="fact"><b data-i18n="f1b"></b><span data-i18n="f1s"></span></div>
+        <div class="fact once"><b data-i18n="f2b"></b><span data-i18n="f2s"></span></div>
+        <div class="fact"><b data-i18n="f3b"></b><span data-i18n="f3s"></span></div>
+        <div class="fact"><b data-i18n="f4b"></b><span data-i18n="f4s"></span></div>
+      </div>
+      <div class="notice">
+        <b data-i18n="rulesTitle"></b>
+        <ul id="rulesList"></ul>
+      </div>
+    </div>
+
+    <p class="form-privacy"><a class="privacy-link" href="/data-processing" target="_blank" rel="noopener noreferrer">Обработка данных участников олимпиады</a></p>
+    <div class="card form">
+      <h2 data-i18n="formTitle"></h2>
+      <p class="sub" data-i18n="formSub"></p>
+      <div class="row2">
+        <div class="field" id="fSur"><label for="inSur" data-i18n="lblSur"></label><input id="inSur" type="text" maxlength="60" autocomplete="family-name" spellcheck="false"><div class="msg" data-i18n="errSur"></div></div>
+        <div class="field" id="fName"><label for="inName" data-i18n="lblName"></label><input id="inName" type="text" maxlength="60" autocomplete="given-name" spellcheck="false"><div class="msg" data-i18n="errName"></div></div>
+      </div>
+      <div>
+        <div class="field" id="fMail"><label for="inMail" data-i18n="lblMail"></label><input id="inMail" type="email" maxlength="100" autocomplete="email" spellcheck="false" inputmode="email"><div class="msg" data-i18n="errMail"></div></div>
+      </div>
+      <label class="check" id="fAgree"><input type="checkbox" id="inAgree"><span data-i18n="agree"></span></label>
+      <button class="btn btn-primary" id="btnStart" style="width:100%"><span data-i18n="btnStart"></span>
+        <span data-icon="right"></span></button>
+    </div>
+  </div>
+</main>
+
+<!-- TEST -->
+<main id="test" class="hidden">
+  <div class="wrap">
+    <div class="tabs" id="tabs"></div>
+    <div id="partHost"></div>
+    <div class="nav">
+      <button class="btn btn-ghost" id="btnPrev"><span data-icon="left"></span><span data-i18n="btnPrev"></span></button>
+      <div class="spacer"></div>
+      <button class="btn btn-navy" id="btnNext"><span data-i18n="btnNext"></span><span data-icon="right"></span></button>
+      <button class="btn btn-primary hidden" id="btnFinish" data-i18n="btnFinish"></button>
+      <div class="navhint" id="navHint"></div>
+    </div>
+  </div>
+</main>
+
+<!-- SENDING / DONE / ERROR -->
+<main id="done" class="hidden">
+  <div class="wrap">
+    <div class="card rhero" id="stSending">
+      <div class="spin"></div>
+      <h2 data-i18n="sendingT"></h2>
+      <p class="lead" data-i18n="sendingB"></p>
+    </div>
+    <div class="card rhero hidden" id="stError">
+      <h2 data-i18n="errT"></h2>
+      <p class="lead" data-i18n="errB"></p>
+      <div class="errbox" id="errInfo"></div>
+      <div class="actions">
+        <button class="btn btn-primary" id="btnResend" data-i18n="btnResend"></button>
+        <button class="btn btn-ghost" id="btnDownload" data-i18n="btnDownload"></button>
+      </div>
+    </div>
+    <div id="stDone" class="hidden">
+      <div class="card rhero">
+        <div class="okbadge"><span data-icon="check"></span></div>
+        <h2 data-i18n="doneT"></h2>
+        <p class="lead" data-i18n="doneB"></p>
+        <div class="actions"><button class="btn btn-primary hidden" id="btnRestartDemo" data-i18n="restartDemo"></button></div>
+        <div id="scoreBox" class="hidden">
+          <div class="score"><span id="scoreVal" style="font-size:inherit;color:inherit;font-weight:inherit">—</span><span> / <span id="scoreMax">100</span></span></div>
+          <div class="scorecap" data-i18n="scoreCap"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="wrap exit-link"><a href="/" data-i18n="homeLink"></a></div><footer><div class="wrap"><span data-i18n="footer"></span><div class="footer-legal"><a class="privacy-link" href="/data-processing" target="_blank" rel="noopener noreferrer">Обработка данных участников олимпиады</a></div></div></footer>
+<div class="toast" id="toast"></div>
+<div id="modalHost"></div>
+<div id="kbdPark" class="hidden"><div class="kbd" id="kbd"></div></div>
+
+<script type="module" src="/src/tests/rku-2/engine.js"></script></body></html>
