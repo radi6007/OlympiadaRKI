@@ -44,9 +44,11 @@ var T = {
   playsLeft:"Осталось прослушиваний: ", playsNone:"Прослушиваний больше нет",
   playerHint:"<b>Сначала прочитайте задания ниже</b>, потом включайте запись. Запись можно прослушать два раза, паузы нет.",
   resume:"Продолжить прослушивание",
-  hintUn:"Без ответа: ", hintAll:"Все задания выполнены. Можно завершать тест.",
+  hintUn:"Не завершены задания № ", hintAll:"Все задания выполнены. Можно завершать тест.",
   mFinishT:"Завершить тест?", mFinishB:"После завершения изменить ответы будет нельзя. Пройти тест ещё раз тоже нельзя.",
-  mFinishUn:"Без ответа осталось заданий: ", mFinishYes:"Да, завершить", mCancel:"Отмена", mOk:"Понятно",
+  mFinishUn:"Не завершено заданий: ", mFinishNumbers:"Номера заданий: ",
+  mFinishCheck:"Проверьте, что заполнены все пропуски, составлены все пары и выбрано нужное количество вариантов ответа.",
+  mFinishYes:"Да, завершить", mCancel:"Отмена", mOk:"Понятно",
   mStartT:"Начать тест?", mStartB:"Таймер на 90 минут запустится сразу. Остановить его нельзя.", mStartYes:"Начать",
   mTimeT:"Время вышло", mTimeB:"Тест завершён автоматически. Ваши ответы отправляются организаторам.",
   tWarn10:"Осталось 10 минут", tWarn1:"Осталась 1 минута",
@@ -93,9 +95,11 @@ var T = {
   playsLeft:"Plays left: ", playsNone:"No plays left",
   playerHint:"<b>Read the tasks below first</b>, then start the recording. You can play it twice; it cannot be paused.",
   resume:"Continue listening",
-  hintUn:"Not answered: ", hintAll:"All tasks are done. You can finish the test.",
+  hintUn:"Incomplete task numbers: ", hintAll:"All tasks are done. You can finish the test.",
   mFinishT:"Finish the test?", mFinishB:"After finishing you will not be able to change your answers or take the test again.",
-  mFinishUn:"Tasks left unanswered: ", mFinishYes:"Yes, finish", mCancel:"Cancel", mOk:"Got it",
+  mFinishUn:"Incomplete tasks: ", mFinishNumbers:"Task numbers: ",
+  mFinishCheck:"Check that all gaps are filled, all pairs are matched and the required number of options is selected.",
+  mFinishYes:"Yes, finish", mCancel:"Cancel", mOk:"Got it",
   mStartT:"Start the test?", mStartB:"The 90-minute timer starts immediately and cannot be stopped.", mStartYes:"Start",
   mTimeT:"Time is up", mTimeB:"The test has finished automatically. Your answers are being sent to the organisers.",
   tWarn10:"10 minutes left", tWarn1:"1 minute left",
@@ -476,7 +480,7 @@ function enterTest(){
 function askFinish(){
   var un = unanswered();
   un.forEach(function(n){ var c = $("q" + n); if(c) c.classList.add("unanswered-hl"); });
-  modal({ title:t("mFinishT"), body:technicalHint("mFinishB"), extra: un.length ? esc(t("mFinishUn")) + un.join(", ") : "",
+  modal({ title:t("mFinishT"), body:technicalHint("mFinishB"), extra: un.length ? esc(t("mFinishUn")) + un.length + ". " + esc(t("mFinishNumbers")) + un.join(", ") + ".<br>" + esc(t("mFinishCheck")) : "",
           ok:t("mFinishYes"), cancel:t("mCancel"), danger:true, onOk:function(){ finishTest(false); } });
 }
 

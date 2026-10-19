@@ -18,12 +18,19 @@ test('original task content and audio are byte-preserved',()=>{
  expect(createHash('sha256').update(readFileSync('public/assets/rki-1.mp3')).digest('hex')).toBe(expected.audioSha256);
  expect(Object.keys(Q)).toHaveLength(33);
 });
-test('six direct links, language persistence, age rules and available tests',async({page})=>{
+test('informational streams, direct links, language persistence, age rules and available tests',async({page})=>{
  await page.goto('/');
- await expect(page.locator('a.stream')).toHaveCount(6);
+ await expect(page.locator('.stream')).toHaveCount(6);
+ await expect(page.locator('.streams a, .streams button, .streams [tabindex], .streams .rki-icon')).toHaveCount(0);
+ await expect(page.getByRole('heading',{name:'Направления олимпиады',exact:true})).toBeVisible();
+ await page.locator('.stream').first().click();await expect(page).toHaveURL(/\/$/);
+ await page.getByRole('button',{name:'EN',exact:true}).click();
+ await expect(page.getByRole('heading',{name:'Olympiad tracks',exact:true})).toBeVisible();
+ await expect(page.locator('.streams a')).toHaveCount(0);
+ await page.getByRole('button',{name:'RU',exact:true}).click();
  await expect(page.getByRole('link',{name:'Зарегистрироваться'}).first()).toHaveAttribute('href',/docs.google.com\/forms\/d\/e\/1FAIpQLSdMRSIZ4N1Kr61FnNSQhdmu2IG4AECOoAZC8qHZCM_gz6uwPg\/viewform/);
  for(const slug of ['rku-1','rku-2','rku-3','rki-1','rki-2','rki-3']){
-  await page.goto('/'); await page.locator(`a[href="/${slug}"]`).click();
+  await page.goto('/'+slug);
   await expect(page).toHaveURL(new RegExp('/'+slug+'$')); await page.reload();
   await expect(page.locator('.code-badge')).toContainText(slug.toUpperCase().replace('RKI','РКИ').replace('RKU','РКУ'));
   if(slug.startsWith('rki'))await expect(page.locator('.thero .sub')).not.toContainText(/10–12|13–15|16–18/);
@@ -104,7 +111,7 @@ test('unanswered completion, EN entry and key information is readable',async({pa
  await page.getByRole('button',{name:'EN',exact:true}).click();await page.locator('#agree').check();await page.locator('#startBtn').click();
  await expect(page.locator('#langEn')).toHaveCount(0);await expect(page.locator('html')).toHaveAttribute('lang','ru');
  await page.locator('#inSur').fill('Demo');await page.locator('#inName').fill('Test');await page.locator('#inMail').fill('demo@example.test');await page.locator('#inAgree').check();await page.locator('#btnStart').click();await page.locator('#mYes').click();
- await page.locator('[data-tab="2"]').click();await page.locator('#btnFinish').click();await expect(page.locator('#modalHost')).toContainText('Без ответа осталось заданий:');await page.locator('#mYes').click();
+ await page.locator('[data-tab="2"]').click();await page.locator('#btnFinish').click();await expect(page.locator('#modalHost')).toContainText('Не завершено заданий: 33.');await page.locator('#mYes').click();
  await page.locator('#stDone .hint-language').click();await expect(page.locator('#stDone .hint-english')).toContainText('No result is saved on a server');
 });
 test('audio error can be retried without consuming a play',async({page})=>{

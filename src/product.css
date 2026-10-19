@@ -38,7 +38,7 @@
 .track.rku .tag{background:var(--rki-rose);color:var(--rki-red)}.track.rki .tag{background:var(--rki-banner);color:var(--rki-navy)}
 .streams{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:auto;padding-top:8px}
 .stream{display:flex;flex-direction:column;gap:6px;padding:12px;border:1px solid var(--rki-border);border-radius:var(--rki-control-radius);text-decoration:none}
-.stream:hover{border-color:var(--rki-red);background:var(--rki-canvas)}.stream b{display:flex;align-items:center;justify-content:space-between;gap:6px;font-size:15px;font-weight:600}.stream span{font-size:13px}.stream .rki-icon{width:16px;height:16px;color:var(--rki-muted)}
+.stream b{font-size:15px;font-weight:600}.stream span{font-size:13px}
 .hint{display:flex;align-items:flex-start;gap:12px;margin-top:24px;padding:20px 24px;border-radius:var(--rki-card-radius);background:var(--rki-surface);font-size:14px}
 .hint .q{color:var(--rki-navy);flex:none}
 .fmt{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:start}.fmt .lead{margin-bottom:24px;font-size:17px}

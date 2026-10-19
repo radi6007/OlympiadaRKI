@@ -154,7 +154,7 @@
             "дипломы, призы, сертификаты"
           ]
         ],
-        "tracksTitle": "Выберите своё направление",
+        "tracksTitle": "Направления олимпиады",
         "rku": {
           "name": "РКУ — русский как унаследованный",
           "text": "Русский — язык вашей семьи, или вы освоили его в раннем детстве и продолжаете изучать в школе."
@@ -406,7 +406,7 @@
             "diplomas, prizes, certificates"
           ]
         ],
-        "tracksTitle": "Choose your track",
+        "tracksTitle": "Olympiad tracks",
         "rku": {
           "name": "РКУ — Russian as a heritage language",
           "text": "Russian is your family language, or you learned it in early childhood and keep studying it at school."

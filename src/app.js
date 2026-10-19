@@ -41,7 +41,7 @@ function landing(T){
       <span class="tag">${tr==="rku"?"РКУ":"РКИ"}</span>
       <h3>${esc(L[tr].name)}</h3>
       <p>${esc(L[tr].text)}</p>
-      <div class="streams">${D.STREAMS.filter(s=>s.track===tr).map(s=>`<a class="stream" href="/${s.slug}"><b>${s.code} ${icon("external")}</b><span>${tr==="rku"?s.age+" "+esc(U.years):esc(s.level[S.lang])}</span></a>`).join("")}</div>
+      <div class="streams">${D.STREAMS.filter(s=>s.track===tr).map(s=>`<div class="stream"><b>${s.code}</b><span>${tr==="rku"?s.age+" "+esc(U.years):esc(s.level[S.lang])}</span></div>`).join("")}</div>
     </div>`).join("");
   return header(T)+`
   <div class="hero"><div class="wrap">
